@@ -72,6 +72,7 @@
         "eqeqeq": "error",
         "no-caller": "error",
         "no-duplicate-case": "error",
+        "no-dupe-else-if": "error",
         "no-duplicate-imports": "error",
         "no-empty": "error",
         "no-eval": "error",
