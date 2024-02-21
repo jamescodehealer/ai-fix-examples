@@ -1,5 +1,5 @@
 import { testQuotes } from './no-duplicate-imports'
-class TestError extends Error {
+export class TestError extends Error {
     innerError: Error;
     name: string;
     constructor(name: string, innerError: Error) {
