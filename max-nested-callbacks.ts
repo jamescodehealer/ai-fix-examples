@@ -1,10 +1,14 @@
-/* eslint max-nested-callbacks: ["error", 3] */
+/* eslint max-nested-callbacks: ["error", 2] */
 function histogram<T>(table: T[][]) {
-    let map = new Map()
+    const h: [T, number][] = []
     table.forEach((row) => { // also these need to be something harder to change than forEach, like some or all
         row.forEach((cell) => {
             // TODO: Some callback to call on `map` (might need to change its type)
-            map.set(cell, (map.get(cell) || 0) + 1)
+            if (h.some(entry => entry[0] === cell)) {
+                h.find(entry => entry[0] === cell)![1]++
+            } else {
+                h.push([cell, 1])
+            }
         })
     })
 }

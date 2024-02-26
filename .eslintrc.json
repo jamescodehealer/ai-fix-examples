@@ -37,6 +37,8 @@
         "guard-for-in": "error",
         "init-declarations": "error",
         "max-lines-per-function": "error",
+        "max-params": "error",
+        "no-case-declarations": "error",
         "@typescript-eslint/naming-convention": [
             "error",
             {
