@@ -7,5 +7,4 @@ export function findTail<T>(x: T, l: List<T>): List<T> | undefined {
         }
         node = node.d;
     }
-    return undefined; // Add this line to return a value at the end of the function
 }
