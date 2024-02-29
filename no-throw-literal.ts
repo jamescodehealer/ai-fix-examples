@@ -1,4 +1,4 @@
-export function mistake(paths: string[]) {
+export function lintFiles(paths: string[]) {
     if (paths.length === 0) {
         throw "No files to lint.";
     }
