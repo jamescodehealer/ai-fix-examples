@@ -1,3 +1,4 @@
+/* eslint no-inner-declarations: "error" */
 interface Node {
     position: Position
     payload: any;

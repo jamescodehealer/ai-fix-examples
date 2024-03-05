@@ -1,4 +1,5 @@
-import { isDeepLooseEqual, sillyQuote, Character } from './no-dupe-else-if'
+import { isDeepLooseEqual, sillyQuote  } from './no-dupe-else-if'
+import { Character } from './no-dupe-else-if'
 
 export function testQuotes() {
     const hamlet = sillyQuote(Character.Hamlet);

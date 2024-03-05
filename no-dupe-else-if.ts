@@ -32,6 +32,7 @@ export function sillyQuote(c: Character) {
             return "We are oft to blame in this, 'tis too much proved, that with devotion's visage and pious action we do sugar o'er the devil himself.";
         case Character.Rosencrantz:
             return "Though this be madness, yet there is method in't.";
+        default:
+            return "none available";
     }
-    return "none available"
 }

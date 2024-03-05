@@ -16,16 +16,14 @@ class Character {
 class Monster extends Character {
     level: number;
     family: string;
-    constructor(level: number, family: string, name: string, position: Position, hp: number) {
-        super(name, position, hp);
+    constructor(level: number, family: string) {
         this.level = level;
         this.family = family;
     }
 }
 class Player extends Character {
     equipment: string[];
-    constructor(name: string, position: Position, equipment: string[], hp: number) {
-        super(name, position, hp);
+    constructor(equipment: string[]) {
         this.equipment = equipment;
     }
 }
