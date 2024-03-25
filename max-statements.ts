@@ -1,4 +1,5 @@
 /* eslint max-statements: "error" */
+/* eslint max-lines-per-function: "off" */
 export function fastMark(n: number) {
     n = n | 0;
     const b4 = n & 0xf;
