@@ -2,8 +2,9 @@
 /* eslint-disable init-declarations */
 import { connectFromRow } from './no-nested-ternary';
 import { Node } from './no-unmodified-loop-condition';
-import { connect, grandparentOfEmpty } from './no-multi-assign';
+import { grandparentOfEmpty } from './no-multi-assign';
 import { findTail } from './no-param-reassign';
+import { connect, findRow } from './database-mock'
 
 export function condenseShuffle(l: Node<string>, r: Node<number>): Node<string> {
     // return nestedPath({ payload: { payload: 'VP', parent: undefined }, parent: { payload: { payload: 'NP', parent: undefined }, parent: undefined } });
@@ -27,22 +28,17 @@ export function condenseShuffle(l: Node<string>, r: Node<number>): Node<string> 
     }
     return grandchild;
 }
+// TODO: Need more expected fixes:
+// - swap parameters
+// - pass an object, not a string
+// - signature takes an options bag, not individual parameters
+// - pass an object, not a different object
+// - don't pass something that's possibly undefined
 // TODO: Rename and add more code for flavour and context
 function complexImportedLiteral() {
     return connectFromRow(['localhost', 1000, { loose: false, lazy: true }])
 }
-function xImported() {
-    try {
-    connect('192.168.0.1', /*loose*/ false, 1000)
-    }
-    catch (e) {
-        console.error(e)
-        return 'something else'
-    }
-    console.log('finding stuff...')
-    return 'stuff'
-}
-function missingImported() {
+function missingArgumentImported() {
     connect('192.168.0.1', 1000)
 }
 function localFunction() {
