@@ -34,12 +34,15 @@ export function condenseShuffle(l: Node<string>, r: Node<number>): Node<string> 
 // - signature takes an options bag, not individual parameters
 // - pass an object, not a different object
 // - don't pass something that's possibly undefined
+// - change the source -- add a type to the parameter
+// - change the source -- generalise the type of the parameter
+// - change multiple sources in a chain (!)
 // TODO: Rename and add more code for flavour and context
 function complexImportedLiteral() {
     return connectFromRow(['localhost', 1000, { loose: false, lazy: true }])
 }
 function missingArgumentImported() {
-    connect('192.168.0.1', 1000)
+    connect('192.168.0.1', 1000, /** loose */ true)
 }
 function localFunction() {
     return definedFunction();
