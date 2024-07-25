@@ -10,6 +10,9 @@ export function connect(address: string, timeout: number, loose: boolean): void 
     // TODO: Actually connect, starting with making this call work: 
     // intended usage:  connect('https://some.site', timeout, /*loose*/ true)
 }
+export function connectDefault(address: string, timeout = 1000, loose = false): void {
+    return connect(address, timeout, loose)
+}
 /** Somehow copilot knew about the uses of findRow elsewhere in my project when suggesting this signature. */
 export function findRow(table: string, conditions: [string, string][], order?: string, limit?: number): string[] {
     // TODO: Actually find row

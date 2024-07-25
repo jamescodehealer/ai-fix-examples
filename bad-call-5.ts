@@ -1,7 +1,7 @@
-import { connectLegacy, findRow } from './database-mock'
+import { connectDefault, findRow } from './database-mock'
 export function findCustomer(name: string, location: string) {
     try {
-        connectLegacy('192.168.0.1', /*loose*/ false)
+        connectDefault('192.168.0.1', { loose: false, timeout: 1000 })
     }
     catch (e) {
         console.error(e)
@@ -12,7 +12,4 @@ export function findCustomer(name: string, location: string) {
         return customer
     }
     return findRow('customers', [['name', 'default'], ['country', 'unknown']], 'top', 100)
-}
-export function testCompletions() {
-    rowConnect('1.1.1.1', true, true)
 }
