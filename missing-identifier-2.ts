@@ -1,6 +1,3 @@
-// top-down programming -- but this is equivalent to "copilot write me some code"
-// so not interesting specifically for /fix
-
 export interface Import {
   specifiers: string[];
   moduleSpecifier: string;
@@ -15,15 +12,7 @@ export function organiseImports(
   return formatted;
 }
 function sortImports(imports: Import[]): Import[] {
-  return _.sorted(imports, (i1, i2) => {
-    if (i1.moduleSpecifier > i2.moduleSpecifier) return -1;
-    if (i1.moduleSpecifier < i2.moduleSpecifier) return 1;
-    const specs1 = i1.specifiers.toSorted().toString();
-    const specs2 = i1.specifiers.toSorted().toString();
-    if (specs1 < specs2) return -1;
-    if (specs1 > specs2) return 1;
-    return 0;
-  });
+  return _.sortBy(imports, i => `${i.moduleSpecifier}:${i.specifiers.sort().toString()}`);
 }
 function findGaps(imports: Import[]): number[] {
   const gaps: number[] = [];
